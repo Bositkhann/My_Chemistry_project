@@ -13,7 +13,27 @@
   gtag('js', new Date());
 
   gtag('config', 'G-N43HJPRXBX');
-</script>
+</script> 
+            // Функция для проверки ответа
+        function checkAnswer(userAnswer) {
+            const correctAnswer = questions[currentQuestionIndex].answer;
+            if (userAnswer === correctAnswer) {
+                correctCount++;
+            } else {
+                incorrectCount++;
+            }
+            updateScore();
+        }
+
+        // Функция для обновления счётчика
+        function updateScore() {
+            document.getElementById('correct').textContent = correctCount;
+            document.getElementById('incorrect').textContent = incorrectCount;
+        }
+
+        // Показ первого вопроса при загрузке страницы
+        showNextQuestion();
+    </script
 </head>
 <body>
     <div class="container">
